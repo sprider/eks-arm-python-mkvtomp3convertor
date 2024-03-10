@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eks-arm-python-mkvtomp3convertor-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eks-arm-python-mkvtomp3convertor-app
+  template:
+    metadata:
+      labels:
+        app: eks-arm-python-mkvtomp3convertor-app
+    spec:
+      containers:
+      - name: eks-arm-python-mkvtomp3convertor-app
+        image: your-repo-name:latest
+        ports:
+        - containerPort: 5000  
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: eks-arm-python-mkvtomp3convertor-service
+spec:
+  type: NodePort
+  selector:
+    app: eks-arm-python-mkvtomp3convertor-app
+  ports:
+    - protocol: TCP
+      port: 5000  
+      targetPort: 5000 

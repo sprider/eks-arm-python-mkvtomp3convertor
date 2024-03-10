@@ -1,0 +1,14 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: aws-eks-arm-cluster
+  region: us-east-1
+
+availabilityZones: ["us-east-1b", "us-east-1d"]
+
+nodeGroups:
+  - name: arm64-node-group
+    instanceType: m6g.large
+    desiredCapacity: 2
+    volumeSize: 80
