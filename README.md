@@ -1,3 +1,3 @@
 # Note
 
-Please check my [article](https://blog.josephvelliah.com/deploying-microservices-on-amazon-eks-with-istio) for more info.
+Please check my [article](https://blog.josephvelliah.com/exploring-arm-architecture-a-practical-demo-with-python-api-on-eks) for more info.
